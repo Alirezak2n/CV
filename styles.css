@@ -1,30 +1,42 @@
+/* General reset and font settings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Clean, modern font */
 }
 
+/* Body and general background settings */
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f4f7fa; /* Light background for better readability */
+    color: #333; /* Dark text color for contrast */
     line-height: 1.6;
     padding: 20px;
+    font-size: 16px;
 }
 
+/* Container for centering content */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
+    background-color: white; /* White background for the content */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for better contrast */
 }
 
+/* Header styles */
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0; /* Subtle separation between header and content */
 }
 
 header h1 {
     font-size: 2.5em;
+    color: #2a3d66; /* Main color for headings */
     margin-bottom: 10px;
 }
 
@@ -32,29 +44,39 @@ header p {
     margin: 5px 0;
 }
 
-header .header-left {
-    text-align: left;
-}
-
-header a {
+header .header-left a {
     color: #2a3d66;
     text-decoration: none;
 }
 
+header .header-left a:hover {
+    text-decoration: underline;
+}
+
+/* Section styles */
 section {
     margin-bottom: 30px;
 }
 
 section h2 {
+    font-size: 1.7em;
     color: #2a3d66;
-    margin-bottom: 10px;
-    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2a3d66; /* Underline for section titles */
+    padding-bottom: 5px;
 }
 
-section h3 {
+/* Job experience and details */
+.job h3 {
+    font-size: 1.3em;
+    color: #2a3d66;
     margin-top: 15px;
-    font-size: 1.2em;
-    color: #333;
+}
+
+.job p {
+    font-style: italic;
+    color: #777;
+    margin-top: 5px;
 }
 
 ul {
@@ -64,20 +86,66 @@ ul {
 
 ul li {
     margin-bottom: 8px;
+    line-height: 1.5;
 }
 
-.job {
-    margin-bottom: 20px;
+/* Skills section */
+.skills ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-.skills p, .languages p {
-    margin-bottom: 15px;
+.skills li {
+    font-size: 1em;
+    color: #333;
 }
 
+/* Certifications section */
 .certifications ul {
     list-style-type: none;
 }
 
 .certifications li {
     margin-bottom: 8px;
+    font-size: 1em;
+    color: #333;
 }
+
+/* Languages section */
+.languages p {
+    margin-bottom: 15px;
+}
+
+/* Responsive design tweaks */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    .skills ul {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+
+    .job h3 {
+        font-size: 1.1em;
+    }
+
+    .job ul li {
+        font-size: 0.9em;
+    }
+}
+
