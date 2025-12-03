@@ -12,33 +12,48 @@ body {
     padding: 20px;
 }
 
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
 header {
-    background-color: #2a3d66;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
 }
 
 header h1 {
+    font-size: 2.5em;
     margin-bottom: 10px;
 }
 
+header p {
+    margin: 5px 0;
+}
+
+header .header-left {
+    text-align: left;
+}
+
 header a {
-    color: #fff;
+    color: #2a3d66;
     text-decoration: none;
 }
 
 section {
-    margin: 20px 0;
+    margin-bottom: 30px;
 }
 
 section h2 {
     color: #2a3d66;
     margin-bottom: 10px;
+    font-size: 1.5em;
 }
 
 section h3 {
     margin-top: 15px;
+    font-size: 1.2em;
     color: #333;
 }
 
@@ -48,9 +63,21 @@ ul {
 }
 
 ul li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
-p {
+.job {
+    margin-bottom: 20px;
+}
+
+.skills p, .languages p {
     margin-bottom: 15px;
+}
+
+.certifications ul {
+    list-style-type: none;
+}
+
+.certifications li {
+    margin-bottom: 8px;
 }
