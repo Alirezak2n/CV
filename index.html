@@ -1,159 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alireza Nameni - CV</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Alireza Nameni — Resume</title>
+
+    <!-- styles -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1Cm9x6k6t6rG4Y9s3nYH0zY6u+7qF6eS6qj5q6YQ5Q6q6z9q6q6q6q6q6q6q6q" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
 <div class="container">
 
-<!-- ================= Header ================= -->
-<header>
-    <div class="header-left">
-        <h1>Alireza Nameni</h1>
-        <p class="subtitle">AI & Proteomics Researcher</p>
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <h1>Alireza Nameni</h1>
+            <p class="role">Machine Learning & AI Researcher — ML for medical & scientific imaging</p>
 
-        <p class="contact-line">
-            Ghent, Belgium |
-            <a href="mailto:alireza.nameni@ugent.be">alireza.nameni@ugent.be</a> |
-            +32 456 391 349 |
-            <a href="https://www.linkedin.com/in/alireza-nameni" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a> |
-            <a href="https://github.com/Alirezak2n" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+            <p class="contact-line">
+                <a href="mailto:alireza.nameni@ugent.be" aria-label="email">alireza.nameni@ugent.be</a>
+                <span class="sep">|</span>
+                <span>+32 456 391 349</span>
+                <span class="sep">|</span>
+                <a href="https://www.linkedin.com/in/alireza-nameni" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i> linkedin.com/in/alireza-nameni
+                </a>
+                <span class="sep">|</span>
+                <a href="https://github.com/Alirezak2n" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i> github.com/Alirezak2n
+                </a>
+            </p>
+        </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section class="summary">
+        <h2>Professional Summary</h2>
+        <p>
+            Machine Learning researcher and software engineer with 6+ years building deep learning models and data
+            pipelines for scientific data. Strong background in Python and PyTorch, experience in model development,
+            validation, and deployment (Docker, Git, CI/CD). Demonstrated ability to lead projects, mentor students,
+            and translate research into reproducible tools. Seeking industry roles applying AI to medical imaging and
+            clinical workflows.
         </p>
-    </div>
-</header>
+    </section>
 
-<!-- ================= Profile ================= -->
-<section class="summary">
-    <h2>Profile</h2>
-    <p>An Artificial Intelligence graduate with more than 6 years experience with strong interest in machine learning, proteomics, data science and deep learning with a goal to connect industry and academia.</p>
-</section>
+    <!-- TECHNICAL SKILLS -->
+    <section class="skills">
+        <h2>Technical Skills</h2>
+        <div class="skill-grid">
+            <div>
+                <h3>Machine Learning</h3>
+                <p>PyTorch, PyTorch Lightning, TensorFlow, Scikit-learn, MONAI (familiar)</p>
+            </div>
+            <div>
+                <h3>Programming & DevOps</h3>
+                <p>Python, Bash, Docker, Git, CI/CD, Linux, unit testing</p>
+            </div>
+            <div>
+                <h3>Data & Tools</h3>
+                <p>NumPy, Pandas, Jupyter, Matplotlib, SQL, HPC</p>
+            </div>
+            <div>
+                <h3>Domain</h3>
+                <p>Medical imaging (familiar), Proteomics (LC-MS/MS), Retention time prediction</p>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= Education ================= -->
-<section>
-    <h2>Education</h2>
-    <ul>
-        <li><strong>PhD in Medical Biotechnology</strong>, UGent Belgium (2021–Present)</li>
-        <li><strong>MSc Artificial Intelligence</strong>, Kharazmi University (2017–2020)</li>
-        <li><strong>BSc Computer Engineering (Software)</strong>, Azad University (2012–2017)</li>
-    </ul>
-</section>
+    <!-- EXPERIENCE -->
+    <section class="experience">
+        <h2>Professional Experience</h2>
 
-<!-- ================= Experience ================= -->
-<section>
-    <h2>Professional Experience</h2>
+        <div class="job">
+            <h3>PhD Researcher — VIB / UGent, Ghent, Belgium</h3>
+            <p class="job-meta">Jul 2021 – Present</p>
+            <ul>
+                <li>Designed and trained deep learning models for retention time prediction (iDeepLC) handling modified peptides; improved generalization to unseen modifications.</li>
+                <li>Built reproducible ML pipelines and tooling used by collaborators; packaged components for reuse and reproducibility.</li>
+                <li>Supervised and mentored <strong>4 MSc students</strong>, provided code reviews, experiment design guidance, and presentation coaching.</li>
+                <li>Co-organized an AlphaFold workshop and delivered tutorials on model usage and best practices for researchers.</li>
+            </ul>
+        </div>
 
-    <div class="job">
-        <h3>PhD Researcher – VIB-UGent</h3>
-        <p>Jul 2021 – Present</p>
+        <div class="job">
+            <h3>Visiting Researcher — EMBL | CRG | FH Upper Austria</h3>
+            <p class="job-meta">Short-term visits, 2022–2024</p>
+            <ul>
+                <li>Developed two ML tools for lab editors and workflows, accelerating processing by up to <strong>10×</strong> (internal evaluation).</li>
+                <li>Presented applied retention-time ML methods for DIA experiments and contributed to collaborative projects on chimeric spectra.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Head of Informatics Department — Petrozist Co., Tehran</h3>
+            <p class="job-meta">Apr 2019 – Dec 2020</p>
+            <ul>
+                <li>Led the IT team: role assignment, maintenance, and infrastructure upgrades to improve reliability and security.</li>
+                <li>Implemented deep learning denoising experiments (MSc thesis collaboration) and led automation of core processes.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Informatics Engineer — Tom Electronic Co., Tehran</h3>
+            <p class="job-meta">Oct 2013 – Apr 2019</p>
+            <ul>
+                <li>Maintained network security and company systems; developed CRM automation software and supported internal tooling.</li>
+                <li>Managed production scheduling and laser engraving processes, reducing order processing errors.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects">
+        <h2>Selected Projects</h2>
+
+        <div class="project">
+            <h3>iDeepLC — Retention Time Predictor</h3>
+            <p class="small">Tech: Python, PyTorch, ONNX (conversion), ML pipelines</p>
+            <p>Deep learning model and encoding approach for predicting LC retention times of modified peptides. Focus on generalization to unseen modifications and isomers; pipeline for model training and export.</p>
+        </div>
+
+        <div class="project">
+            <h3>Mokapot-based Rescoring with Non-Linear Models</h3>
+            <p class="small">Tech: Python, Mokapot, XGBoost / non-linear models</p>
+            <p>Explored rescoring strategies to improve PSM identification and analyzed tradeoffs in sensitivity vs false positives.</p>
+        </div>
+
+        <div class="project">
+            <h3>Personal — Medical Imaging (Portfolio Starter)</h3>
+            <p class="small">Tech: PyTorch, U-Net, Docker (in progress)</p>
+            <p>Personal project: cardiac CT segmentation prototype (U-Net). Focus on model validation, inference optimization, and containerized deployment for evaluation.</p>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education">
+        <h2>Education</h2>
         <ul>
-            <li>Supervised & mentored four MSc students.</li>
-            <li>Co-organized AlphaFold crash course.</li>
-            <li>Research in retention time prediction and mass spectrometry analysis.</li>
-            <li>Workshops & talks in international conferences.</li>
+            <li><strong>PhD in Medical Biotechnology</strong>, UGent — Jul 2021 – Present</li>
+            <li><strong>MSc in Artificial Intelligence</strong>, Kharazmi University — 2017–2020  
+                <br><em>Thesis:</em> Deep Learning Approach for Various Gaussian Noise Removal in Images</li>
+            <li><strong>BSc Computer Engineering (Software)</strong>, Azad University — 2012–2017</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="job">
-        <h3>Visiting Researcher – EMBL | CRG | FH Upper Austria</h3>
-        <p>2022–2024</p>
+    <!-- CERTS & AWARDS -->
+    <section class="extras">
+        <h2>Certifications & Awards</h2>
         <ul>
-            <li>Invited speaker at CRG for DIA retention time prediction.</li>
-            <li>Developed ML tools increasing workflow speed ×10.</li>
-            <li>Participated in long night of research (FH Austria).</li>
+            <li>Git & GitHub — Google (2025)</li>
+            <li>Advanced Python — Microsoft (2025)</li>
+            <li>Deep Learning — Coursera (2022)</li>
+            <li>Best Poster Audience Award — EuBIC (2024); HUPO 3MT finalist (2023, 2024)</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="job">
-        <h3>Head of Informatics Department — Petrozist Co.</h3>
-        <p>Apr 2019 – Dec 2020</p>
+    <!-- PUBLICATIONS (short) -->
+    <section class="publications">
+        <h2>Publications & Manuscripts</h2>
         <ul>
-            <li>Managed IT team and network infrastructure.</li>
-            <li>Deep learning work for gaussian denoising (MSc thesis).</li>
+            <li>iDeepLC — (manuscript under revision). Retention-time prediction for modified peptides.</li>
+            <li>Mokapot with non-linear ML — (under revision).</li>
+            <li>Urban Rooftop Photovoltaic Potential — (2021)</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="job">
-        <h3>Informatics Engineer — Tom Electronic Co.</h3>
-        <p>Oct 2013 – Apr 2019</p>
-        <ul>
-            <li>Network security, maintenance, CRM automation software.</li>
-            <li>Laser engraving supervisor and orders management.</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ================= Skills ================= -->
-<section class="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>Python · Deep Learning · Pytorch · Tensorflow</li>
-        <li>Machine Learning · Data Science · AI in Proteomics</li>
-        <li>Docker · Git/Github · Scikit-learn</li>
-        <li>3D Modeling · Blender · Substance Painter</li>
-        <li>HTML/CSS · Photoshop · Game Design</li>
-        <li>Scientific writing · Mentoring · Project teamwork</li>
-    </ul>
-</section>
-
-<!-- ================= Projects ================= -->
-<section>
-    <h2>Projects</h2>
-    <ul>
-        <li>iDeepLC — Deep learning RT prediction for modified peptides</li>
-        <li>Mokapot with non-linear models for PSM identification</li>
-        <li>Urban rooftop photovoltaic potential modeling</li>
-    </ul>
-</section>
-
-<!-- ================= Publications ================= -->
-<section>
-    <h2>Publications</h2>
-    <ul>
-        <li>iDeepLC (Under revision)</li>
-        <li>Mokapot non-linear ML (Under revision)</li>
-        <li>Urban Rooftop Photovoltaic Potential (2021)</li>
-    </ul>
-</section>
-
-<!-- ================= Awards ================= -->
-<section>
-    <h2>Awards & Contributions</h2>
-    <ul>
-        <li>Best poster audience award — EuBIC 2024</li>
-        <li>Top 30 ECR poster — HUPO 2024</li>
-        <li>3MT finalist — HUPO 2023 & 2024</li>
-        <li>Workshop instructor — Proteomics & AI</li>
-    </ul>
-</section>
-
-<!-- ================= Certificates ================= -->
-<section>
-    <h2>Certificates</h2>
-    <ul>
-        <li>Deep Learning — Coursera (2022)</li>
-        <li>Machine Learning — IBM (2022)</li>
-        <li>Git & GitHub — Google (2025)</li>
-        <li>Advanced Python — Microsoft (2025)</li>
-        <li>Australian Migration Computer Skills Assessment (2019)</li>
-    </ul>
-</section>
-
-<!-- ================= Languages ================= -->
-<section>
-    <h2>Languages</h2>
-    <p>English (C1) · Persian (Native) · Dutch (B1) · Turkish (A1)</p>
-</section>
+    <!-- LANGUAGES -->
+    <section class="languages">
+        <h2>Languages</h2>
+        <p>English (C1) · Persian (Native) · Dutch (B1) · Turkish (A1)</p>
+    </section>
 
 </div>
 </body>

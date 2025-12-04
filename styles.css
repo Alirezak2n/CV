@@ -1,156 +1,128 @@
 /* ===========================
-   General reset & font
-=========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+   Reset & base
+   =========================== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', Arial, sans-serif; }
+html,body { height: 100%; }
+
+body {
+    background-color: #f4f7fa;
+    color: #222;
+    line-height: 1.5;
+    font-size: 15.5px;
+    padding: 14px;
 }
 
 /* ===========================
-   Body & container
-=========================== */
-body {
-    background-color: #f4f7fa;
-    color: #333;
-    line-height: 1.55;
-    padding: 15px; /* slightly reduced */
-    font-size: 16px;
-}
-
+   Container
+   =========================== */
 .container {
     max-width: 900px;
-    margin: auto;
-    background-color: white;
-    padding: 22px; /* reduced from 30px */
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 22px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 /* ===========================
    Header
-=========================== */
+   =========================== */
 header {
     display: flex;
     align-items: flex-start;
-    padding-bottom: 10px; /* reduced */
-    border-bottom: 2px solid #e0e0e0;
-    margin-bottom: 18px; /* reduced */
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e6edf5;
+    margin-bottom: 16px;
 }
 
-header h1 {
-    font-size: 2em; /* smaller for compactness */
+.header-left h1, header h1 {
+    font-size: 1.9rem; /* compact */
+    color: #243b66;
     font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.role {
+    font-size: 0.98rem;
     color: #2a3d66;
-    margin-bottom: 3px;
+    margin-bottom: 6px;
 }
 
-header p {
-    margin: 2px 0; /* denser text */
+/* contact line */
+.contact-line {
+    font-size: 0.92rem;
+    color: #333;
 }
 
-.header-left a {
-    color: #2a3d66;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.header-left a:hover {
-    text-decoration: underline;
-}
-
-.links a {
-    margin-right: 12px;
-}
-
-.links i {
-    margin-right: 5px;
-}
+.contact-line a { color: #2a3d66; text-decoration: none; font-weight: 500; }
+.contact-line a:hover { text-decoration: underline; }
+.contact-line .sep { margin: 0 8px; color: #888; }
 
 /* ===========================
-   Section formatting
-=========================== */
-section {
-    margin-bottom: 22px; /* was 30px */
-}
-
+   Section title
+   =========================== */
+section { margin-bottom: 18px; }
 section h2 {
-    font-size: 1.55em; /* slightly smaller */
-    color: #2a3d66;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #2a3d66;
-    padding-bottom: 3px;
+    font-size: 1.25rem;
+    color: #243b66;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #e6edf5;
+    padding-bottom: 4px;
 }
 
 /* ===========================
-   Experience / Jobs
-=========================== */
-.job h3 {
-    font-size: 1.25em;
-    color: #2a3d66;
-    margin-top: 10px; /* reduced */
-}
-
-.job p {
-    font-style: italic;
-    color: #777;
-    margin-top: 3px; /* tighter spacing */
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 18px;
-}
-
-ul li {
-    margin-bottom: 5px; /* reduced from 8px */
-    line-height: 1.45;
-}
+   Summary
+   =========================== */
+.summary p { font-size: 0.98rem; color: #333; }
 
 /* ===========================
-   Skills layout
-=========================== */
-.skills ul {
+   Skills grid
+   =========================== */
+.skill-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px; /* tighter */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 6px;
 }
 
-.skills li {
-    font-size: 0.97em;
-}
+.skill-grid h3 { font-size: 0.98rem; color: #243b66; margin-bottom: 4px; }
+.skill-grid p { font-size: 0.93rem; color: #333; }
 
 /* ===========================
-   Certifications/Languages compact
-=========================== */
-.certifications li,
-.languages p {
-    font-size: 0.97em;
-}
+   Experience, Projects
+   =========================== */
+.job, .project { margin-top: 8px; }
+.job h3, .project h3 { font-size: 1.03rem; color: #243b66; margin-bottom: 2px; }
+.job-meta, .small { font-size: 0.88rem; color: #666; margin-bottom: 6px; }
+
+ul { list-style: none; padding-left: 14px; }
+ul li { margin-bottom: 6px; font-size: 0.95rem; color: #263238; line-height: 1.45; }
+
+/* Emphasize numbers or roles */
+strong { color: #1b355a; }
 
 /* ===========================
-   Responsive
-=========================== */
-@media (max-width: 768px) {
-    .container { padding: 15px; }
+   Education / extras
+   =========================== */
+.education ul, .extras ul, .publications ul { margin-top: 6px; }
 
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header h1 { font-size: 1.75em; }
-
-    .skills ul { grid-template-columns: 1fr; }
+/* ===========================
+   Responsive adjustments
+   =========================== */
+@media (max-width: 800px) {
+    .skill-grid { grid-template-columns: 1fr; }
+    header { flex-direction: column; align-items: flex-start; }
+    .contact-line { margin-top: 6px; }
+    .container { padding: 14px; }
 }
 
 /* ===========================
    Print optimization
-=========================== */
+   =========================== */
 @media print {
     body { background: white; }
-    .container { box-shadow: none; padding: 15px; }
-    section { margin-bottom: 18px; }
+    .container { box-shadow: none; padding: 12px; border-radius: 0; }
+    section h2 { border-bottom: none; }
     a { color: black; text-decoration: none; }
+    .contact-line { font-size: 11pt; }
 }
