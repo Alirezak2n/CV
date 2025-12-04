@@ -1,153 +1,156 @@
-/* General reset and font settings */
+/* ===========================
+   General reset & font
+=========================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif; /* Clean, modern font */
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Body and general background settings */
+/* ===========================
+   Body & container
+=========================== */
 body {
-    background-color: #f4f7fa; /* Light background for better readability */
-    color: #333; /* Dark text color for contrast */
-    line-height: 1.6;
-    padding: 20px;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.55;
+    padding: 15px; /* slightly reduced */
     font-size: 16px;
 }
 
-/* Container for centering content */
 .container {
     max-width: 900px;
     margin: auto;
-    background-color: white; /* White background for the content */
-    padding: 30px;
+    background-color: white;
+    padding: 22px; /* reduced from 30px */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for better contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Header styles */
+/* ===========================
+   Header
+=========================== */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #e0e0e0; /* Subtle separation between header and content */
+    align-items: flex-start;
+    padding-bottom: 10px; /* reduced */
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 18px; /* reduced */
 }
 
 header h1 {
-    font-size: 2.5em;
-    color: #2a3d66; /* Main color for headings */
-    margin-bottom: 10px;
+    font-size: 2em; /* smaller for compactness */
+    font-weight: 700;
+    color: #2a3d66;
+    margin-bottom: 3px;
 }
 
 header p {
-    margin: 5px 0;
+    margin: 2px 0; /* denser text */
 }
 
-header .header-left a {
+.header-left a {
     color: #2a3d66;
     text-decoration: none;
+    font-weight: 500;
 }
 
-header .header-left a:hover {
+.header-left a:hover {
     text-decoration: underline;
 }
 
-/* Section styles */
+.links a {
+    margin-right: 12px;
+}
+
+.links i {
+    margin-right: 5px;
+}
+
+/* ===========================
+   Section formatting
+=========================== */
 section {
-    margin-bottom: 30px;
+    margin-bottom: 22px; /* was 30px */
 }
 
 section h2 {
-    font-size: 1.7em;
+    font-size: 1.55em; /* slightly smaller */
     color: #2a3d66;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #2a3d66; /* Underline for section titles */
-    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2a3d66;
+    padding-bottom: 3px;
 }
 
-/* Job experience and details */
+/* ===========================
+   Experience / Jobs
+=========================== */
 .job h3 {
-    font-size: 1.3em;
+    font-size: 1.25em;
     color: #2a3d66;
-    margin-top: 15px;
+    margin-top: 10px; /* reduced */
 }
 
 .job p {
     font-style: italic;
     color: #777;
-    margin-top: 5px;
+    margin-top: 3px; /* tighter spacing */
 }
 
 ul {
     list-style-type: none;
-    padding-left: 20px;
+    padding-left: 18px;
 }
 
 ul li {
-    margin-bottom: 8px;
-    line-height: 1.5;
+    margin-bottom: 5px; /* reduced from 8px */
+    line-height: 1.45;
 }
 
-/* Skills section */
+/* ===========================
+   Skills layout
+=========================== */
 .skills ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 6px; /* tighter */
 }
 
 .skills li {
-    font-size: 1em;
-    color: #333;
+    font-size: 0.97em;
 }
 
-/* Certifications section */
-.certifications ul {
-    list-style-type: none;
-}
-
-.certifications li {
-    margin-bottom: 8px;
-    font-size: 1em;
-    color: #333;
-}
-
-/* Languages section */
+/* ===========================
+   Certifications/Languages compact
+=========================== */
+.certifications li,
 .languages p {
-    margin-bottom: 15px;
+    font-size: 0.97em;
 }
 
-/* Responsive design tweaks */
+/* ===========================
+   Responsive
+=========================== */
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
+    .container { padding: 15px; }
 
     header {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    header h1 {
-        font-size: 2em;
-    }
+    header h1 { font-size: 1.75em; }
 
-    section h2 {
-        font-size: 1.5em;
-    }
-
-    .skills ul {
-        grid-template-columns: 1fr; /* Single column for smaller screens */
-    }
-
-    .job h3 {
-        font-size: 1.1em;
-    }
-
-    .job ul li {
-        font-size: 0.9em;
-    }
+    .skills ul { grid-template-columns: 1fr; }
 }
 
-
-
+/* ===========================
+   Print optimization
+=========================== */
+@media print {
+    body { background: white; }
+    .container { box-shadow: none; padding: 15px; }
+    section { margin-bottom: 18px; }
+    a { color: black; text-decoration: none; }
+}
