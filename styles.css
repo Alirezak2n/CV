@@ -2,13 +2,13 @@
    COLOR VARIABLES — CHANGE HERE ONLY
    =========================== */
 :root {
-    --primary: #243b66;       /* main highlight titles */
-    --accent: #e6edf5;        /* section underline, subtle lines */
-    --text: #222;             /* body text */
-    --muted: #666;            /* meta info / dates */
-    --link: #2a3d66;          /* links */
-    --bg: #f4f7fa;            /* page background */
-    --card-bg: #fff;          /* container background */
+    --primary: #1E3A8A;      /* Title / main headers */
+    --accent: #00A676;       /* Section underline / highlights */
+    --text: #111827;         /* Body text */
+    --muted: #666666;        /* Dates & meta text */
+    --link: #1E3A8A;         /* Links match the theme */
+    --bg: #f4f7fa;           /* Page background */
+    --card-bg: #ffffff;      /* Container background */
 }
 
 /* ===========================
