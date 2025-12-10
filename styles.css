@@ -1,12 +1,25 @@
 /* ===========================
+   COLOR VARIABLES — CHANGE HERE ONLY
+   =========================== */
+:root {
+    --primary: #243b66;       /* main highlight titles */
+    --accent: #e6edf5;        /* section underline, subtle lines */
+    --text: #222;             /* body text */
+    --muted: #666;            /* meta info / dates */
+    --link: #2a3d66;          /* links */
+    --bg: #f4f7fa;            /* page background */
+    --card-bg: #fff;          /* container background */
+}
+
+/* ===========================
    Reset & Base
    =========================== */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',Arial,sans-serif;}
 html,body{height:100%;}
 
 body{
-    background:#f4f7fa;
-    color:#222;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.5;
     font-size:15.5px;
     padding:14px;
@@ -18,7 +31,7 @@ body{
 .container{
     max-width:900px;
     margin:auto;
-    background:#fff;
+    background:var(--card-bg);
     padding:20px 22px;
     border-radius:8px;
     box-shadow:0 4px 12px rgba(0,0,0,0.06);
@@ -31,25 +44,26 @@ header{
     display:flex;
     align-items:flex-start;
     padding-bottom:8px;
-    border-bottom:2px solid #e6edf5;
+    border-bottom:2px solid var(--accent);
     margin-bottom:16px;
 }
 
 .header-left h1{
-    font-size:1.85rem; /* compact size */
-    color:#243b66;
+    font-size:1.85rem;
+    color:var(--primary);
     font-weight:700;
     margin-bottom:4px;
 }
 
 .role{
     font-size:.97rem;
-    color:#2a3d66;
+    color:var(--primary);
+    opacity:0.85;
     margin-bottom:6px;
 }
 
 /* ===========================
-   Contact line + Icons
+   Contact Line + Icons
    =========================== */
 .contact-line{
     font-size:.92rem;
@@ -57,19 +71,17 @@ header{
     flex-wrap:wrap;
     gap:4px;
     align-items:center;
-    color:#333;
 }
 
-.contact-line a{color:#2a3d66;font-weight:500;text-decoration:none;}
+.contact-line a{
+    color:var(--link);
+    font-weight:500;
+    text-decoration:none;
+}
 .contact-line a:hover{text-decoration:underline;}
-.contact-line .sep{margin:0 8px;color:#888;}
+.contact-line .sep{margin:0 8px;color:var(--muted);}
 
-.contact-line i{
-    margin-right:6px;
-    font-size:1rem;
-    vertical-align:middle;
-}
-
+.contact-line i{margin-right:6px;font-size:1rem;vertical-align:middle;}
 .contact-line a[href*="linkedin"] i{color:#0077B5;}
 .contact-line a[href*="github"] i{color:#181717;}
 
@@ -79,35 +91,38 @@ header{
 section{margin-bottom:20px;}
 section h2{
     font-size:1.23rem;
-    color:#243b66;
+    color:var(--primary);
     margin-bottom:8px;
     padding-bottom:4px;
-    border-bottom:2px solid #e6edf5;
+    border-bottom:2px solid var(--accent);
 }
 
 /* ===========================
    Summary
    =========================== */
-.summary p{font-size:.97rem;color:#333;}
+.summary p{font-size:.97rem;color:var(--text);}
 
 /* ===========================
-   Skills Section
+   Skills
    =========================== */
 .skills .skill-category{margin-bottom:10px;}
+
 .skills h3{
     font-size:.97rem;
-    color:#1b355a;
+    color:var(--primary);
     margin-bottom:4px;
     font-weight:600;
 }
+
 .skills p{
     font-size:.92rem;
-    color:#333;
+    color:var(--text);
     margin-bottom:4px;
     line-height:1.4;
 }
+
 .skills .optional p{
-    opacity:.8;
+    opacity:.7;
     font-style:italic;
 }
 
@@ -117,13 +132,14 @@ section h2{
 .job,.project{margin-top:8px;}
 .job h3,.project h3{
     font-size:1.05rem;
-    color:#243b66;
+    color:var(--primary);
     margin-bottom:2px;
     font-weight:600;
 }
+
 .job-meta,.small{
     font-size:.86rem;
-    color:#666;
+    color:var(--muted);
     margin-bottom:4px;
 }
 
@@ -131,37 +147,32 @@ ul{list-style:none;padding-left:14px;}
 ul li{
     margin-bottom:6px;
     font-size:.95rem;
-    color:#263238;
+    color:var(--text);
     line-height:1.45;
 }
 
-strong{color:#1b355a;}
+strong{color:var(--primary);font-weight:600;}
 
 /* ===========================
-   Education & Extras
+   Certifications section
    =========================== */
-.education ul,.extras ul,.publications ul{margin-top:6px;}
+.certificates .cert-block{margin-bottom:12px;}
 
-/* ===========================
-   Certification Section
-   =========================== */
-.certificates .cert-block{
-    margin-bottom:12px;
-}
 .certificates h3{
     font-size:.97rem;
     font-weight:600;
-    color:#1b355a;
+    color:var(--primary);
     margin-bottom:4px;
 }
+
 .certificates ul li{
     font-size:.9rem;
     margin-left:10px;
     margin-bottom:3px;
-    color:#333;
+    color:var(--text);
 }
 
-/* optional lighten less relevant certs */
+/* lighten less relevant blocks */
 .certificates .cert-block:nth-child(n+4) li{
     opacity:.85;
 }
@@ -171,24 +182,16 @@ strong{color:#1b355a;}
    =========================== */
 @media(max-width:800px){
     header{flex-direction:column;}
-    .contact-line{margin-top:6px;}
     .container{padding:14px;}
+    .contact-line{margin-top:6px;}
 }
 
 /* ===========================
-   Print Mode (PDF save version)
+   Print Version
    =========================== */
 @media print{
     body{background:white;}
-    .container{
-        box-shadow:none;
-        border-radius:0;
-        padding:10px;
-    }
-    section h2{
-        border-bottom:none;
-        margin-bottom:4px;
-    }
+    .container{box-shadow:none;border-radius:0;padding:10px;}
+    section h2{border-bottom:none;margin-bottom:4px;}
     a{text-decoration:none;color:black;}
-    .contact-line{font-size:11pt;}
 }
