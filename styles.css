@@ -18,7 +18,7 @@
 
     --font-size-name: 3rem;
     --font-size-role: 0.92rem;
-    --font-size-section-title: 1.15rem;
+    --font-size-section-title: 1.5rem;
     --font-size-skill-heading: 0.93rem;
     --font-size-job-heading: 1rem;
     --font-size-body: 0.94rem;
@@ -28,20 +28,20 @@
     --font-size-cert-item: 0.85rem;
     --font-size-icon: 0.95rem;
 
-    /* Spacing */
-    --space-xxs: 2px;
-    --space-xs: 3px;
-    --space-sm: 4px;
-    --space-md: 6px;
-    --space-lg: 8px;
-    --space-xl: 10px;
-    --space-xxl: 14px;
-    --space-section: 14px;
+    /* Spacing (slightly tighter) */
+    --space-xxs: 1px;
+    --space-xs: 2px;
+    --space-sm: 3px;
+    --space-md: 4px;
+    --space-lg: 6px;
+    --space-xl: 8px;
+    --space-xxl: 10px;
+    --space-section: 10px;
 
     /* Layout / borders / shadows */
     --container-max-width: 900px;
-    --container-padding-x: 22px;
-    --container-padding-y: 16px;
+    --container-padding-x: 16px;
+    --container-padding-y: 12px;
     --border-radius-card: 8px;
     --header-border-width: 2px;
     --section-divider-height: 2px;
@@ -64,7 +64,7 @@ body{
     color:var(--color-text);
     font-size:var(--font-size-base);
     line-height:var(--line-height-base);
-    padding:10px;
+    padding:6px;
 }
 
 .container{
@@ -147,7 +147,7 @@ section h2{
     display:flex;
     align-items:center;
     gap:var(--space-lg);
-    margin-bottom:var(--space-lg);
+    margin-bottom:var(--space-md);
 }
 
 /* Divider line that continues to the right of the title */
@@ -171,7 +171,9 @@ section h2::after{
 /* ===========================
    Skills
    =========================== */
-.skills .skill-category{margin-bottom:var(--space-md);}
+.skills .skill-category{
+    margin-bottom:var(--space-md);
+}
 .skills h3{
     font-size:var(--font-size-skill-heading);
     color:var(--color-primary);
@@ -192,7 +194,20 @@ section h2::after{
    =========================== */
 .job,
 .project{
-    margin-top:var(--space-md);
+    margin-top:var(--space-sm);
+}
+
+/* Shared header for job/project title + dates */
+.item-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:var(--space-md);
+    margin-bottom:var(--space-xs);
+}
+
+.item-header h3{
+    margin-bottom:0;
 }
 
 .job h3,
@@ -200,14 +215,12 @@ section h2::after{
     font-size:var(--font-size-job-heading);
     color:var(--color-primary);
     font-weight:600;
-    margin-bottom:var(--space-xxs);
 }
 
 .job-meta,
 .small{
     font-size:var(--font-size-meta);
     color:var(--color-muted);
-    margin-bottom:var(--space-sm);
 }
 
 /* Lists inside main container */
@@ -249,10 +262,19 @@ strong{
    =========================== */
 @media(max-width:800px){
     .container{
-        padding:12px;
+        padding:10px;
     }
     .contact-line{
         margin-top:var(--space-sm);
+    }
+}
+
+/* On narrow screens, stack title and date vertically to avoid crowding */
+@media(max-width:600px){
+    .item-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:var(--space-xxs);
     }
 }
 
