@@ -1,197 +1,172 @@
 /* ===========================
-   COLOR VARIABLES — CHANGE HERE ONLY
+   COLOR VARIABLES
    =========================== */
 :root {
-    --primary: #1E3A8A;      /* Title / main headers */
-    --accent: #00A676;       /* Section underline / highlights */
-    --text: #111827;         /* Body text */
-    --muted: #666666;        /* Dates & meta text */
-    --link: #1E3A8A;         /* Links match the theme */
-    --bg: #f4f7fa;           /* Page background */
-    --card-bg: #ffffff;      /* Container background */
+    --primary: #1E3A8A;
+    --accent: #00A676;
+    --text: #111827;
+    --muted: #666;
+    --link: #1E3A8A;
+    --bg: #f4f7fa;
+    --card-bg: #fff;
 }
 
 /* ===========================
-   Reset & Base
+   Base
    =========================== */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',Arial,sans-serif;}
-html,body{height:100%;}
-
 body{
     background:var(--bg);
     color:var(--text);
-    line-height:1.5;
-    font-size:15.5px;
-    padding:14px;
+    font-size:15px;
+    line-height:1.45;
+    padding:10px;
 }
 
-/* ===========================
-   Container
-   =========================== */
 .container{
     max-width:900px;
     margin:auto;
     background:var(--card-bg);
-    padding:20px 22px;
+    padding:16px 22px;
     border-radius:8px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    box-shadow:0 3px 8px rgba(0,0,0,0.05);
 }
 
 /* ===========================
-   Header
+   HEADER — Center Aligned
    =========================== */
 header{
     display:flex;
-    align-items:flex-start;
-    padding-bottom:8px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
     border-bottom:2px solid var(--accent);
-    margin-bottom:16px;
+    margin-bottom:14px;
+    padding-bottom:6px;
 }
 
 .header-left h1{
-    font-size:1.85rem;
+    font-size:3rem;
     color:var(--primary);
     font-weight:700;
-    margin-bottom:4px;
+    margin-bottom:2px;
 }
 
 .role{
-    font-size:.97rem;
+    font-size:.92rem;
     color:var(--primary);
-    opacity:0.85;
-    margin-bottom:6px;
+    opacity:.85;
+    margin-bottom:3px;
 }
 
-/* ===========================
-   Contact Line + Icons
-   =========================== */
+/* Contact Line Centered */
 .contact-line{
-    font-size:.92rem;
+    font-size:.88rem;
     display:flex;
     flex-wrap:wrap;
-    gap:4px;
+    gap:6px;
     align-items:center;
+    justify-content:center;
+    margin-top:4px;
 }
 
-.contact-line a{
-    color:var(--link);
-    font-weight:500;
-    text-decoration:none;
-}
+.contact-line a{color:var(--link);font-weight:500;text-decoration:none;}
 .contact-line a:hover{text-decoration:underline;}
-.contact-line .sep{margin:0 8px;color:var(--muted);}
-
-.contact-line i{margin-right:6px;font-size:1rem;vertical-align:middle;}
+.contact-line .sep{margin:0 6px;color:var(--muted);}
+.contact-line i{margin-right:4px;font-size:.95rem;}
 .contact-line a[href*="linkedin"] i{color:#0077B5;}
 .contact-line a[href*="github"] i{color:#181717;}
 
+
 /* ===========================
-   Section Titles
+   SECTION TITLES — Line after text
    =========================== */
-section{margin-bottom:20px;}
+section{margin-bottom:14px;}
+
 section h2{
-    font-size:1.23rem;
+    font-size:1.15rem;
     color:var(--primary);
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
     margin-bottom:8px;
-    padding-bottom:4px;
-    border-bottom:2px solid var(--accent);
 }
+
+/* Divider line that continues to the right of the title */
+section h2::after{
+    content:"";
+    flex:1;
+    height:2px;
+    background:var(--accent);
+    border-radius:4px;
+}
+
 
 /* ===========================
    Summary
    =========================== */
-.summary p{font-size:.97rem;color:var(--text);}
+.summary p{
+    font-size:.94rem;
+    margin-bottom:4px;
+}
 
 /* ===========================
    Skills
    =========================== */
-.skills .skill-category{margin-bottom:10px;}
-
+.skills .skill-category{margin-bottom:6px;}
 .skills h3{
-    font-size:.97rem;
-    color:var(--primary);
-    margin-bottom:4px;
-    font-weight:600;
-}
-
-.skills p{
-    font-size:.92rem;
-    color:var(--text);
-    margin-bottom:4px;
-    line-height:1.4;
-}
-
-.skills .optional p{
-    opacity:.7;
-    font-style:italic;
-}
-
-/* ===========================
-   Experience + Projects
-   =========================== */
-.job,.project{margin-top:8px;}
-.job h3,.project h3{
-    font-size:1.05rem;
+    font-size:.93rem;
     color:var(--primary);
     margin-bottom:2px;
     font-weight:600;
 }
+.skills p{font-size:.88rem;margin-bottom:2px;}
+.skills .optional p{opacity:.7;font-style:italic;}
 
-.job-meta,.small{
-    font-size:.86rem;
-    color:var(--muted);
-    margin-bottom:4px;
+/* ===========================
+   Experience + Projects
+   =========================== */
+.job,.project{margin-top:6px;}
+.job h3,.project h3{
+    font-size:1rem;
+    color:var(--primary);
+    font-weight:600;
+    margin-bottom:1px;
 }
+.job-meta,.small{font-size:.8rem;color:var(--muted);margin-bottom:3px;}
 
-ul{list-style:none;padding-left:14px;}
-ul li{
-    margin-bottom:6px;
-    font-size:.95rem;
-    color:var(--text);
-    line-height:1.45;
-}
-
+ul{list-style:none;padding-left:12px;}
+ul li{margin-bottom:4px;font-size:.9rem;line-height:1.35;}
 strong{color:var(--primary);font-weight:600;}
 
 /* ===========================
-   Certifications section
+   Certificates
    =========================== */
-.certificates .cert-block{margin-bottom:12px;}
-
+.certificates .cert-block{margin-bottom:8px;}
 .certificates h3{
-    font-size:.97rem;
+    font-size:.93rem;
     font-weight:600;
     color:var(--primary);
-    margin-bottom:4px;
+    margin-bottom:2px;
 }
-
-.certificates ul li{
-    font-size:.9rem;
-    margin-left:10px;
-    margin-bottom:3px;
-    color:var(--text);
-}
-
-/* lighten less relevant blocks */
-.certificates .cert-block:nth-child(n+4) li{
-    opacity:.85;
-}
+.certificates ul li{font-size:.85rem;margin-left:8px;margin-bottom:2px;}
 
 /* ===========================
    Responsive
    =========================== */
 @media(max-width:800px){
-    header{flex-direction:column;}
-    .container{padding:14px;}
-    .contact-line{margin-top:6px;}
+    .container{padding:12px;}
+    .contact-line{margin-top:4px;}
 }
 
 /* ===========================
-   Print Version
+   Print
    =========================== */
 @media print{
     body{background:white;}
-    .container{box-shadow:none;border-radius:0;padding:10px;}
-    section h2{border-bottom:none;margin-bottom:4px;}
+    .container{box-shadow:none;border-radius:0;padding:8px;}
+    section h2::after{background:black;}
     a{text-decoration:none;color:black;}
 }
