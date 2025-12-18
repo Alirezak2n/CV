@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link href="styles_updated.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
@@ -52,49 +52,50 @@
             workflows.</p>
     </section>
 
+
     <!-- SKILLS -->
     <section class="skills">
         <h2>Skills</h2>
 
         <div class="skill-category">
-            <h3>Machine Learning & Deep Learning</h3>
-            <p>Python · PyTorch · TensorFlow · Neural Networks · CNN · RNN/LSTM · Transformers · Hyperparameter
-                Optimization · Model Training & Evaluation</p>
+            <h3>AI and machine learning</h3>
+            <p>Deep learning · Neural networks · CNN · RNN/LSTM · Transformers · Model training and evaluation · Hyperparameter optimisation · PyTorch · TensorFlow</p>
         </div>
 
         <div class="skill-category">
-            <h3>Computer Vision & Imaging</h3>
-            <p>Computer Vision · Image Denoising · Image Recognition · OpenCV · Noise Modeling · Gaussian Noise
-                Removal</p>
+            <h3>Generative AI and LLMs</h3>
+            <p>Large language models (LLMs) · Generative AI · Agentic systems (agents, memory) · Natural language processing (NLP)</p>
         </div>
 
         <div class="skill-category">
-            <h3>Data Engineering & Scientific Data Processing</h3>
-            <p>Data Engineering · Large-Scale Data Processing · Data Curation · MGF/HDF5 Processing (MGF2PyTorch) ·
-                Parsing Automation (EMBO Tool) · Scientific Data Pipelines</p>
+            <h3>Data engineering and scientific computing</h3>
+            <p>Large-scale data processing · Data curation · Parsing and automation · Reproducible pipelines · Visualization</p>
         </div>
 
         <div class="skill-category">
-            <h3>Software Engineering & DevOps</h3>
-            <p>Git · GitHub · CI/CD · Docker · SDLC · Agile · Software Development · Documentation · Open-Source
-                Collaboration</p>
+            <h3>Software engineering</h3>
+            <p>Python · Rust · Git/GitHub · Version control · CI/CD · Software documentation · SDLC · Agile and Waterfall methodologies · Open-source software</p>
         </div>
 
         <div class="skill-category">
-            <h3>Bioinformatics Domain Expertise</h3>
-            <p>Proteomics (LC-MS/MS) · Mass Spectrometry Data · Bioinformatics · Benchmarking (ProteoBench) · Retention
-                Time Modeling (iDeepLC) · Scientific Computing</p>
+            <h3>Computer vision</h3>
+            <p>Computer vision · Image denoising · Image recognition · OpenCV · Noise modeling</p>
         </div>
 
-        <div class="skill-category optional">
-            <h3>Bonus Technical Knowledge</h3>
-            <p>Rust (Rusteomics) · Cloud (Azure) · Web Development (HTML/CSS) · C++ · Java</p>
+        <div class="skill-category">
+            <h3>Computational proteomics</h3>
+            <p>Proteomics · LC-MS/MS · Mass spectrometry-based proteomics · Bioinformatics · Benchmarking workflows (ProteoBench) · Retention time modeling (iDeepLC)</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>Additional tools and languages</h3>
+            <p>Microsoft Azure · HTML/CSS · C# (Unity) · C++ · Java</p>
         </div>
 
     </section>
 
 
-    <!-- EXPERIENCE -->
+<!-- EXPERIENCE -->
     <section class="experience">
         <h2>Professional Experience</h2>
 
@@ -155,63 +156,56 @@
                 <h3>ProteoBench — Benchmarking Platform</h3>
                 <p class="small">Sep 2024 – Present | VIB</p>
             </div>
-            <p>Developer for ProteoBench, an open-source platform for evaluating proteomics workflows.</p>
-            <p><strong>Tech:</strong> Python · Git · Open-Source · Proteomics</p>
-        </div>
+            <p>Developer for ProteoBench, an open-source Python platform for benchmarking proteomics data analysis workflows; contributed evaluation visualisations and manuscript-ready figures.</p>
+</div>
 
         <div class="project">
             <div class="item-header">
                 <h3>iDeepLC — Retention Time Prediction (PyPI)</h3>
                 <p class="small">2021 – Present | VIB</p>
             </div>
-            <p>Deep learning RT predictor with GUI/CLI + novel encoding system enabling unseen modification support.</p>
-            <p><strong>Tech:</strong> PyTorch · Python · ML Pipelines · GitHub</p>
-        </div>
+            <p>Maintainer of iDeepLC (PyPI): deep-learning retention time prediction for modified peptides, delivered as GUI and CLI; introduced an encoding strategy to generalise to unseen modifications.</p>
+</div>
 
         <div class="project">
             <div class="item-header">
                 <h3>MGF2PyTorch — Spectral ML Dataset Converter</h3>
                 <p class="small">2025 | VIB</p>
             </div>
-            <p>Converts MGF spectra into HDF5/PyTorch format with filtering & preprocessing support.</p>
-            <p><strong>Tech:</strong> Python · Mass Spec · Data Engineering</p>
-        </div>
+            <p>Designed a converter from MGF MS/MS spectra to compact HDF5 datasets for fast querying and PyTorch training; includes filtering and preprocessing utilities.</p>
+</div>
 
         <div class="project">
             <div class="item-header">
                 <h3>Mokapot ML Rescoring</h3>
                 <p class="small">2022–2024 | VIB</p>
             </div>
-            <p>Non-linear rescoring to boost PSM detection while evaluating false positives.</p>
-            <p><strong>Tech:</strong> Python · ML · Large-Scale Processing</p>
-        </div>
+            <p>Applied non-linear rescoring with mokapot to improve PSM identification while systematically evaluating false positives at scale.</p>
+</div>
 
         <div class="project">
             <div class="item-header">
                 <h3>EMBO Excel Compare Tool</h3>
                 <p class="small">2024 | EMBL</p>
             </div>
-            <p>Python tool for comparing manuscript spreadsheets; improved workflow ~10×.</p>
-            <p><strong>Tech:</strong> Python · File Parsing</p>
-        </div>
+            <p>Built a Python tool for differential comparison of manuscript spreadsheets and text exports, accelerating editorial validation by approximately 10×.</p>
+</div>
 
         <div class="project">
             <div class="item-header">
                 <h3>Rusteomics</h3>
                 <p class="small">2023 | VIB</p>
             </div>
-            <p>Part of Rust-based proteomics initiative for high-performance MS data processing.</p>
-            <p><strong>Tech:</strong> Rust · GitHub</p>
-        </div>
+            <p>Contributed to a Rust-based proteomics initiative focused on high-performance mass-spectrometry data processing.</p>
+</div>
 
         <div class="project">
             <div class="item-header">
                 <h3>MSc Thesis — Gaussian Noise Removal in Images</h3>
                 <p class="small">2019–2020</p>
             </div>
-            <p>CNN-based image denoising framework.</p>
-            <p><strong>Tech:</strong> TensorFlow · CV · OpenCV</p>
-        </div>
+            <p>Developed a CNN-based image denoising framework for Gaussian noise removal and assessed performance across image quality metrics.</p>
+</div>
 
         <div class="project">
             <div class="item-header">
@@ -247,15 +241,9 @@
         <div class="cert-block">
             <h3>Machine Learning & Data Science</h3>
             <ul>
-                <li><strong>Artificial Intelligence Essentials V2</strong> – IBM (Dec 2025)
-                    <span class="cert-meta">Skills: Generative AI · Artificial Intelligence (AI)</span>
-                </li>
-                <li><strong>Introduction to Artificial Intelligence (AI)</strong> – IBM (Dec 2025)
-                    <span class="cert-meta">Credential ID: 2QFELAMZNUJ0 · Skills: Large Language Models (LLM) · Generative AI · Natural Language Processing (NLP) · Computer Vision</span>
-                </li>
-                <li><strong>LLMs as Operating Systems: Agent Memory</strong> – DeepLearning.AI (Dec 2025)
-                    <span class="cert-meta">Skills: Large Language Models (LLM) · Agents</span>
-                </li>
+                <li>Artificial Intelligence Essentials V2 – IBM (Dec 2025)</li>
+                <li>Introduction to Artificial Intelligence (AI) – IBM (Dec 2025) </li>
+                <li>LLMs as Operating Systems: Agent Memory – DeepLearning.AI (Dec 2025)</li>
 
                 <li>Deep Learning Specialization – Coursera (2020)</li>
                 <li>Machine Learning – Coursera (2019)</li>

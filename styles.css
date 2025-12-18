@@ -184,11 +184,6 @@ section h2::after{
     font-size:var(--font-size-body-secondary);
     margin-bottom:var(--space-xs);
 }
-.skills .optional p{
-    opacity:.7;
-    font-style:italic;
-}
-
 /* ===========================
    Experience + Projects
    =========================== */
@@ -239,6 +234,14 @@ strong{
     font-weight:600;
 }
 
+
+/* Inline credential ID */
+.credential-id{
+    font-size:var(--font-size-meta);
+    color:var(--color-muted);
+    margin-left:6px;
+}
+
 /* ===========================
    Certificates
    =========================== */
@@ -255,15 +258,6 @@ strong{
     font-size:var(--font-size-cert-item);
     margin-left:8px;
     margin-bottom:var(--space-xs);
-}
-
-/* Certificate details (skills / credential IDs) */
-.certificates .cert-meta{
-    display:block;
-    font-size:var(--font-size-meta);
-    color:var(--color-muted);
-    margin-top:1px;
-    line-height:1.35;
 }
 
 
