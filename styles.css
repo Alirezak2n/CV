@@ -257,6 +257,16 @@ strong{
     margin-bottom:var(--space-xs);
 }
 
+/* Certificate details (skills / credential IDs) */
+.certificates .cert-meta{
+    display:block;
+    font-size:var(--font-size-meta);
+    color:var(--color-muted);
+    margin-top:1px;
+    line-height:1.35;
+}
+
+
 /* ===========================
    Responsive
    =========================== */
