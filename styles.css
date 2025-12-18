@@ -1,20 +1,14 @@
-/* ===========================
-   DESIGN TOKENS (variables)
-   =========================== */
-:root {
-    /* Colors */
-    --color-primary: #1E3A8A;
+:root{
+    --color-primary: #000000;
     --color-accent: #00A676;
     --color-text: #111827;
     --color-muted: #666666;
-    --color-link: #1E3A8A;
     --color-bg: #f4f7fa;
     --color-card-bg: #ffffff;
 
-    /* Typography */
     --font-family-base: 'Roboto', Arial, sans-serif;
     --font-size-base: 15px;
-    --line-height-base: 1.45;
+    --line-height-base: 1.42;
 
     --font-size-name: 3rem;
     --font-size-role: 0.92rem;
@@ -26,19 +20,7 @@
     --font-size-meta: 0.8rem;
     --font-size-contact: 0.88rem;
     --font-size-cert-item: 0.85rem;
-    --font-size-icon: 0.95rem;
 
-    /* Spacing (slightly tighter) */
-    --space-xxs: 1px;
-    --space-xs: 2px;
-    --space-sm: 3px;
-    --space-md: 4px;
-    --space-lg: 6px;
-    --space-xl: 8px;
-    --space-xxl: 10px;
-    --space-section: 10px;
-
-    /* Layout / borders / shadows */
     --container-max-width: 900px;
     --container-padding-x: 16px;
     --container-padding-y: 12px;
@@ -47,11 +29,15 @@
     --section-divider-height: 2px;
     --section-divider-radius: 4px;
     --card-shadow: 0 3px 8px rgba(0,0,0,0.05);
+
+    /* tighter spacing knobs */
+    --space-xs: 2px;
+    --space-sm: 3px;
+    --space-md: 4px;
+    --space-lg: 6px;
+    --space-section: 10px;
 }
 
-/* ===========================
-   Base
-   =========================== */
 *{
     margin:0;
     padding:0;
@@ -77,7 +63,7 @@ body{
 }
 
 /* ===========================
-   HEADER — Center Aligned
+   HEADER (BLACK + NO ITALICS)
    =========================== */
 header{
     display:flex;
@@ -86,25 +72,26 @@ header{
     justify-content:center;
     text-align:center;
     border-bottom:var(--header-border-width) solid var(--color-accent);
-    margin-bottom:var(--space-xxl);
+    margin-bottom:var(--space-lg);
     padding-bottom:var(--space-md);
 }
 
 .header-left h1{
     font-size:var(--font-size-name);
-    color:var(--color-primary);
+    color:#000;
     font-weight:700;
     margin-bottom:var(--space-xs);
 }
 
 .role{
     font-size:var(--font-size-role);
-    color:var(--color-primary);
-    opacity:.85;
+    color:#000;
+    font-weight:500;
+    font-style:normal;
     margin-bottom:var(--space-sm);
 }
 
-/* Contact Line Centered */
+/* address is italic by default */
 .contact-line{
     font-size:var(--font-size-contact);
     display:flex;
@@ -113,28 +100,23 @@ header{
     align-items:center;
     justify-content:center;
     margin-top:var(--space-sm);
+    font-style:normal; /* removes italics */
 }
 
 .contact-line a{
-    color:var(--color-link);
+    color:#000;
     font-weight:500;
     text-decoration:none;
 }
-.contact-line a:hover{text-decoration:underline;}
+.contact-line a:hover{ text-decoration:underline; }
+
 .contact-line .sep{
     margin:0 var(--space-sm);
-    color:var(--color-muted);
+    color:#000;
 }
-.contact-line i{
-    margin-right:var(--space-xxs);
-    font-size:var(--font-size-icon);
-}
-.contact-line a[href*="linkedin"] i{color:#0077B5;}
-.contact-line a[href*="github"] i{color:#181717;}
-
 
 /* ===========================
-   SECTION TITLES — Line after text
+   SECTIONS (TIGHTER)
    =========================== */
 section{
     margin-bottom:var(--space-section);
@@ -150,7 +132,6 @@ section h2{
     margin-bottom:var(--space-md);
 }
 
-/* Divider line that continues to the right of the title */
 section h2::after{
     content:"";
     flex:1;
@@ -159,21 +140,15 @@ section h2::after{
     border-radius:var(--section-divider-radius);
 }
 
-
-/* ===========================
-   Summary
-   =========================== */
+/* Summary */
 .summary p{
     font-size:var(--font-size-body);
     margin-bottom:var(--space-sm);
 }
 
-/* ===========================
-   Skills
-   =========================== */
-.skills .skill-category{
-    margin-bottom:var(--space-md);
-}
+/* Skills */
+.skills .skill-category{ margin-bottom:var(--space-md); }
+
 .skills h3{
     font-size:var(--font-size-skill-heading);
     color:var(--color-primary);
@@ -184,15 +159,10 @@ section h2::after{
     font-size:var(--font-size-body-secondary);
     margin-bottom:var(--space-xs);
 }
-/* ===========================
-   Experience + Projects
-   =========================== */
-.job,
-.project{
-    margin-top:var(--space-sm);
-}
 
-/* Shared header for job/project title + dates */
+/* Experience + Projects */
+.job, .project{ margin-top:var(--space-sm); }
+
 .item-header{
     display:flex;
     justify-content:space-between;
@@ -201,24 +171,18 @@ section h2::after{
     margin-bottom:var(--space-xs);
 }
 
-.item-header h3{
-    margin-bottom:0;
-}
-
-.job h3,
-.project h3{
+.job h3, .project h3{
     font-size:var(--font-size-job-heading);
     color:var(--color-primary);
     font-weight:600;
 }
 
-.job-meta,
-.small{
+.job-meta, .small{
     font-size:var(--font-size-meta);
     color:var(--color-muted);
 }
 
-/* Lists inside main container */
+/* Lists */
 .container ul{
     list-style:none;
     padding-left:12px;
@@ -234,20 +198,8 @@ strong{
     font-weight:600;
 }
 
-
-/* Inline credential ID */
-.credential-id{
-    font-size:var(--font-size-meta);
-    color:var(--color-muted);
-    margin-left:6px;
-}
-
-/* ===========================
-   Certificates
-   =========================== */
-.certificates .cert-block{
-    margin-bottom:var(--space-lg);
-}
+/* Certificates */
+.certificates .cert-block{ margin-bottom:var(--space-lg); }
 .certificates h3{
     font-size:var(--font-size-skill-heading);
     font-weight:600;
@@ -260,45 +212,23 @@ strong{
     margin-bottom:var(--space-xs);
 }
 
-
-/* ===========================
-   Responsive
-   =========================== */
-@media(max-width:800px){
-    .container{
-        padding:10px;
-    }
-    .contact-line{
-        margin-top:var(--space-sm);
-    }
-}
-
-/* On narrow screens, stack title and date vertically to avoid crowding */
+/* Responsive */
 @media(max-width:600px){
     .item-header{
         flex-direction:column;
         align-items:flex-start;
-        gap:var(--space-xxs);
+        gap:1px;
     }
 }
 
-/* ===========================
-   Print
-   =========================== */
+/* Print */
 @media print{
-    body{
-        background:white;
-    }
+    body{ background:white; }
     .container{
         box-shadow:none;
         border-radius:0;
         padding:8px;
     }
-    section h2::after{
-        background:black;
-    }
-    a{
-        text-decoration:none;
-        color:black;
-    }
+    section h2::after{ background:black; }
+    a{ text-decoration:none; color:black; }
 }
