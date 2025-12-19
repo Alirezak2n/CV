@@ -7,19 +7,13 @@
     --color-card-bg: #ffffff;
 
     --font-family-base: 'Roboto', Arial, sans-serif;
-    --font-size-base: 15px;
-    --line-height-base: 1.42;
 
-    --font-size-name: 3rem;
-    --font-size-role: 0.92rem;
-    --font-size-section-title: 1.5rem;
-    --font-size-skill-heading: 0.93rem;
-    --font-size-job-heading: 1rem;
-    --font-size-body: 0.94rem;
-    --font-size-body-secondary: 0.9rem;
-    --font-size-meta: 0.8rem;
-    --font-size-contact: 0.88rem;
-    --font-size-cert-item: 0.85rem;
+    /* Exactly THREE font sizes across the whole CV */
+    --fs-large: 38px;   /* Name (H1) */
+    --fs-medium: 18px;  /* Section titles (H2) */
+    --fs-small: 15px;   /* Everything else (body + subheadings H3) */
+
+    --line-height-base: 1.42;
 
     --container-max-width: 900px;
     --container-padding-x: 16px;
@@ -48,7 +42,7 @@
 body{
     background:var(--color-bg);
     color:var(--color-text);
-    font-size:var(--font-size-base);
+    font-size:var(--fs-small);
     line-height:var(--line-height-base);
     padding:6px;
 }
@@ -63,7 +57,7 @@ body{
 }
 
 /* ===========================
-   HEADER (BLACK + NO ITALICS)
+   HEADER
    =========================== */
 header{
     display:flex;
@@ -77,34 +71,33 @@ header{
 }
 
 .header-left h1{
-    font-size:var(--font-size-name);
-    color:#000;
+    font-size:var(--fs-large);
+    color:var(--color-primary);
     font-weight:700;
     margin-bottom:var(--space-xs);
 }
 
 .role{
-    font-size:var(--font-size-role);
-    color:#000;
+    font-size:var(--fs-small);
+    color:var(--color-primary);
     font-weight:500;
     font-style:normal;
     margin-bottom:var(--space-sm);
 }
 
-/* address is italic by default */
 .contact-line{
-    font-size:var(--font-size-contact);
+    font-size:var(--fs-small);
     display:flex;
     flex-wrap:wrap;
     gap:var(--space-sm);
     align-items:center;
     justify-content:center;
     margin-top:var(--space-sm);
-    font-style:normal; /* removes italics */
+    font-style:normal; /* address is italic by default */
 }
 
 .contact-line a{
-    color:#000;
+    color:var(--color-primary);
     font-weight:500;
     text-decoration:none;
 }
@@ -112,18 +105,19 @@ header{
 
 .contact-line .sep{
     margin:0 var(--space-sm);
-    color:#000;
+    color:var(--color-primary);
 }
 
 /* ===========================
-   SECTIONS (TIGHTER)
+   SECTIONS
    =========================== */
 section{
     margin-bottom:var(--space-section);
 }
 
+/* Main categories (Projects, Education, etc.) */
 section h2{
-    font-size:var(--font-size-section-title);
+    font-size:var(--fs-medium);
     color:var(--color-primary);
     font-weight:700;
     display:flex;
@@ -140,24 +134,21 @@ section h2::after{
     border-radius:var(--section-divider-radius);
 }
 
-/* Summary */
-.summary p{
-    font-size:var(--font-size-body);
-    margin-bottom:var(--space-sm);
-}
-
-/* Skills */
-.skills .skill-category{ margin-bottom:var(--space-md); }
-
-.skills h3{
-    font-size:var(--font-size-skill-heading);
+/* Subcategories (project names, job titles, skills subheadings, certificate sub-blocks)
+   -> SMALL + BOLD (similar visual weight as Education entries) */
+.skills h3,
+.job h3,
+.project h3,
+.certificates h3{
+    font-size:var(--fs-small);
     color:var(--color-primary);
     margin-bottom:var(--space-xs);
-    font-weight:600;
+    font-weight:700;
 }
-.skills p{
-    font-size:var(--font-size-body-secondary);
-    margin-bottom:var(--space-xs);
+
+/* Ensure all body-like text stays on the small size */
+p, li, .job-meta, .small, address{
+    font-size:var(--fs-small);
 }
 
 /* Experience + Projects */
@@ -171,14 +162,7 @@ section h2::after{
     margin-bottom:var(--space-xs);
 }
 
-.job h3, .project h3{
-    font-size:var(--font-size-job-heading);
-    color:var(--color-primary);
-    font-weight:600;
-}
-
 .job-meta, .small{
-    font-size:var(--font-size-meta);
     color:var(--color-muted);
 }
 
@@ -189,25 +173,17 @@ section h2::after{
 }
 .container ul li{
     margin-bottom:var(--space-sm);
-    font-size:var(--font-size-body-secondary);
     line-height:1.35;
 }
 
 strong{
     color:var(--color-primary);
-    font-weight:600;
+    font-weight:700;
 }
 
-/* Certificates */
+/* Certificates spacing */
 .certificates .cert-block{ margin-bottom:var(--space-lg); }
-.certificates h3{
-    font-size:var(--font-size-skill-heading);
-    font-weight:600;
-    color:var(--color-primary);
-    margin-bottom:var(--space-xs);
-}
 .certificates ul li{
-    font-size:var(--font-size-cert-item);
     margin-left:8px;
     margin-bottom:var(--space-xs);
 }
