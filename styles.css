@@ -6,7 +6,8 @@
     --color-bg: #f4f7fa;
     --color-card-bg: #ffffff;
 
-    --font-family-base: 'Roboto', Arial, sans-serif;
+    /* Arial (sans-serif) */
+    --font-family-base: Arial, Helvetica, sans-serif;
 
     /* Exactly THREE font sizes across the whole CV */
     --fs-large: 38px;   /* Name (H1) */
@@ -80,7 +81,7 @@ header{
 .role{
     font-size:var(--fs-small);
     color:var(--color-primary);
-    font-weight:500;
+    font-weight:600;
     font-style:normal;
     margin-bottom:var(--space-sm);
 }
@@ -98,7 +99,7 @@ header{
 
 .contact-line a{
     color:var(--color-primary);
-    font-weight:500;
+    font-weight:600;
     text-decoration:none;
 }
 .contact-line a:hover{ text-decoration:underline; }
@@ -135,7 +136,7 @@ section h2::after{
 }
 
 /* Subcategories (project names, job titles, skills subheadings, certificate sub-blocks)
-   -> SMALL + BOLD (similar visual weight as Education entries) */
+   -> SMALL + BOLD */
 .skills h3,
 .job h3,
 .project h3,
