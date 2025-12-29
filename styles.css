@@ -232,10 +232,6 @@ strong{
         border-radius:0;
         padding:8px;
     }
-    :root{
-    --fs-small: 10.5pt;
-    --fs-medium: 13pt;
-    --fs-large: 22pt;
-    }
+
 
 }
