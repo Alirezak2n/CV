@@ -1,237 +1,106 @@
-:root{
+:root {
     --color-primary: #000000;
     --color-text: #111827;
     --color-muted: #666666;
     --color-bg: #f4f7fa;
     --color-card-bg: #ffffff;
+    --color-header-accent: #00A676;
+    --color-section-accent: #000000;
+    --font-family-base: 'Roboto', Arial, sans-serif;
 
-    /* NEW: separate accents for header vs section divider lines */
-    --color-header-accent: #00A676;  /* green for the upper (header) line */
-    --color-section-accent: #000000; /* black for all section divider lines */
+    --fs-large: 28px;
+    --fs-medium: 15px;
+    --fs-small: 11px;
+    --line-height-base: 1.4;
 
-    /* Arial (sans-serif) */
-    --font-family-base: Arial, Helvetica, sans-serif;
-
-    /* Exactly THREE font sizes across the whole CV */
-    --fs-large: 30px;   /* Name (H1) */
-    --fs-medium: 16px;  /* Section titles (H2) */
-    --fs-small: 12px;   /* Everything else (body + subheadings H3) */
-
-    --line-height-base: 1.42;
-
-    --container-max-width: 900px;
-    --container-padding-x: 16px;
-    --container-padding-y: 12px;
-    --border-radius-card: 8px;
-    --header-border-width: 2px;
-    --section-divider-height: 2px;
-    --section-divider-radius: 4px;
-    --card-shadow: 0 3px 8px rgba(0,0,0,0.05);
-
-    /* tighter spacing knobs */
     --space-xs: 2px;
-    --space-sm: 3px;
-    --space-md: 4px;
-    --space-lg: 6px;
-    --space-section: 10px;
+    --space-sm: 4px;
+    --space-md: 6px;
+    --space-section: 12px;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:var(--font-family-base);
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-family-base); }
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--fs-small);
+    line-height: var(--line-height-base);
+    padding: 10px;
 }
 
-body{
-    background:var(--color-bg);
-    color:var(--color-text);
-    font-size:var(--fs-small);
-    line-height:var(--line-height-base);
-    padding:6px;
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: var(--color-card-bg);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.container{
-    max-width:var(--container-max-width);
-    margin:auto;
-    background:var(--color-card-bg);
-    padding:var(--container-padding-y) var(--container-padding-x);
-    border-radius:var(--border-radius-card);
-    box-shadow:var(--card-shadow);
+header {
+    text-align: center;
+    border-bottom: 2px solid var(--color-header-accent);
+    margin-bottom: var(--space-section);
+    padding-bottom: var(--space-md);
 }
 
-/* ===========================
-   HEADER
-   =========================== */
-header{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+header h1 { font-size: var(--fs-large); color: var(--color-primary); margin-bottom: var(--space-xs); }
+.role { font-weight: 700; color: var(--color-header-accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-sm); }
 
-    /* CHANGED: header line in green only */
-    border-bottom:var(--header-border-width) solid var(--color-header-accent);
-
-    margin-bottom:var(--space-lg);
-    padding-bottom:var(--space-md);
+.contact-line {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-style: normal;
 }
 
-.header-left h1{
-    font-size:var(--fs-large);
-    color:var(--color-primary);
-    font-weight:700;
-    margin-bottom:var(--space-xs);
+.contact-line a { color: var(--color-text); text-decoration: none; font-weight: 500; }
+.contact-line a:hover { text-decoration: underline; }
+.sep { color: #ccc; }
+
+section { margin-bottom: var(--space-section); }
+section h2 {
+    font-size: var(--fs-medium);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
 }
 
-.role{
-    font-size:var(--fs-small);
-    color:var(--color-primary);
-    font-weight:600;
-    font-style:normal;
-    margin-bottom:var(--space-sm);
+section h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--color-section-accent);
 }
 
-.contact-line{
-    font-size:var(--fs-small);
-    display:flex;
-    flex-wrap:wrap;
-    gap:var(--space-sm);
-    align-items:center;
-    justify-content:center;
-    margin-top:var(--space-sm);
-    font-style:normal; /* address is italic by default */
+.skill-category h3, .job h3, .project h3, .cert-block h3 { font-size: var(--fs-small); font-weight: 700; margin-bottom: 2px; color: var(--color-primary); }
+.skill-category { margin-bottom: var(--space-md); }
+
+.item-header { display: flex; justify-content: space-between; align-items: baseline; }
+.job-meta, .small { color: var(--color-muted); font-weight: 500; white-space: nowrap; }
+
+ul { list-style: disc; padding-left: 18px; }
+li { margin-bottom: 2px; }
+
+.project-grid, .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
-.contact-line a{
-    color:var(--color-primary);
-    font-weight:600;
-    text-decoration:none;
-}
-.contact-line a:hover{ text-decoration:underline; }
-
-.contact-line .sep{
-    margin:0 var(--space-sm);
-    color:var(--color-primary);
+@media (max-width: 600px) {
+    .project-grid, .cert-grid { grid-template-columns: 1fr; }
+    .item-header { flex-direction: column; }
 }
 
-/* ===========================
-   SECTIONS
-   =========================== */
-section{
-    margin-bottom:var(--space-section);
-}
-
-/* Main categories (Projects, Education, etc.) */
-section h2{
-    font-size:var(--fs-medium);
-    color:var(--color-primary);
-    font-weight:700;
-    display:flex;
-    align-items:center;
-    gap:var(--space-lg);
-    margin-bottom:var(--space-md);
-}
-
-section h2::after{
-    content:"";
-    flex:1;
-    height:var(--section-divider-height);
-
-    /* CHANGED: all section divider lines in black */
-    background:var(--color-section-accent);
-
-    border-radius:var(--section-divider-radius);
-}
-
-/* Subcategories (project names, job titles, skills subheadings, certificate sub-blocks)
-   -> SMALL + BOLD */
-.skills h3,
-.job h3,
-.project h3,
-.certificates h3{
-    font-size:var(--fs-small);
-    color:var(--color-primary);
-    margin-bottom:var(--space-xs);
-    font-weight:700;
-}
-
-/* Ensure all body-like text stays on the small size */
-p, li, .job-meta, .small, address{
-    font-size:var(--fs-small);
-}
-
-/* Experience + Projects */
-.job, .project{ margin-top:var(--space-sm); }
-
-.item-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    gap:var(--space-md);
-    margin-bottom:var(--space-xs);
-}
-
-.job-meta, .small{
-    color:var(--color-muted);
-}
-
-/* Lists */
-.container ul{
-    list-style:none;
-    padding-left:12px;
-}
-.container ul li{
-    margin-bottom:var(--space-sm);
-    line-height:1.35;
-}
-
-strong{
-    color:var(--color-primary);
-    font-weight:700;
-}
-
-/* Certificates spacing */
-.certificates .cert-block{ margin-bottom:var(--space-lg); }
-.certificates ul li{
-    margin-left:8px;
-    margin-bottom:var(--space-xs);
-}
-
-/* ===========================
-   SKILLS: FIX GROUPING/SPACING
-   =========================== */
-
-/* Tighten h3 -> its own paragraph */
-.skills .skill-category h3{
-    margin-bottom: 1px;
-}
-
-/* Add space AFTER each category so text doesn't look closer to the next subheading */
-.skills .skill-category{
-    margin-bottom: var(--space-lg);
-}
-.skills .skill-category:last-child{
-    margin-bottom: 0;
-}
-
-/* Responsive */
-@media(max-width:600px){
-    .item-header{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:1px;
-    }
-}
-
-/* Print */
-@media print{
-    body{ background:white; }
-    .container{
-        box-shadow:none;
-        border-radius:0;
-        padding:12px;
-    }
-
-
+@media print {
+    body { background: white; padding: 0; }
+    .container { box-shadow: none; border-radius: 0; width: 100%; max-width: 100%; padding: 0; }
+    .job, .project, .skill-category, .cert-block { page-break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; }
 }
